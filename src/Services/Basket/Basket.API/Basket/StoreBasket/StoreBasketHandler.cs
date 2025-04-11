@@ -7,7 +7,7 @@
         {
             var cart = command.Cart;
 
-            return new StoreBasketResult("sw");
+            return new StoreBasketResult("aaa");
         }
     }
 
