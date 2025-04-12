@@ -2,7 +2,7 @@
 {
     public class BasketNotFoundException : NotFoundException
     {
-        public BasketNotFoundException(string userName) : base("Basker", userName)
+        public BasketNotFoundException(string userName) : base("Basket", userName)
         {
         }
     }

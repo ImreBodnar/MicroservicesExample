@@ -1,13 +1,15 @@
 ﻿namespace Basket.API.Basket.StoreBasket
 {
-    public class StoreBasketCommandHandler 
+    public class StoreBasketCommandHandler(IBasketRepository repository)
         : ICommandHandler<StoreBasketCommand, StoreBasketResult>
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
         {
             var cart = command.Cart;
 
-            return new StoreBasketResult("aaa");
+            await repository.StoreBasket(cart, cancellationToken);
+
+            return new StoreBasketResult(command.Cart.UserName);
         }
     }
 
