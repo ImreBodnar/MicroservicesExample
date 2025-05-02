@@ -17,7 +17,7 @@ namespace Ordering.API.Endpoints
                 return Results.Ok(response);
             })
             .WithName("UpdateOrder")
-            .Produces<CreateOrderResponse>(StatusCodes.Status200OK)
+            .Produces<UpdateOrderResponse>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithSummary("UpdateOrder")
             .WithDescription("Update Order");
