@@ -13,6 +13,11 @@ builder.Services.AddRefitClient<IBasketService>()
     {
         options.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
     });
+builder.Services.AddRefitClient<IOrderingService>()
+    .ConfigureHttpClient(options =>
+    {
+        options.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
+    });
 
 var app = builder.Build();
 
